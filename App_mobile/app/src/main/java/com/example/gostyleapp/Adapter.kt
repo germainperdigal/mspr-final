@@ -1,19 +1,16 @@
 package com.example.gostyleapp
 
-import android.annotation.SuppressLint
 import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuView
-import androidx.core.view.marginEnd
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_list_code.view.*
 import kotlinx.android.synthetic.main.item_row.view.*
+
 
 /** Data list adapter */
 class DataListAdapter(var dataList: List<QRCodeModel>, val clickListener: (QRCodeModel) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -34,6 +31,13 @@ class DataListAdapter(var dataList: List<QRCodeModel>, val clickListener: (QRCod
             itemView.description.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG;
             itemView.valeur.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG;
             itemView.btn_close_qr.visibility = View.INVISIBLE;
+            (itemView.valeur.layoutParams as ConstraintLayout.LayoutParams).apply {
+                marginStart=0
+                topMargin=0
+                marginEnd=0
+                bottomMargin=0
+            }
+
             itemView.setBackgroundColor(Color.LTGRAY);
         }
 

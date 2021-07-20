@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GoStyleApp</string>
+    <string name="scanning">Scan en cours ...</string>
+    <string name="list_coupon">Liste</string>
+</resources>

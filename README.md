@@ -1,0 +1,1 @@
+Cette application utilise principalement un scanner de QR code via l'appareil photo et retourne un identifiant unique pour recevoir les informations liées à ce QR code via une API, ensuite nous les affichons dans une liste qui permet à l'utilisateur de suivre ses codes scannés

@@ -1,0 +1,21 @@
+URL qui actualise le statut du qrcode (si il est valide):
+
+(METHODE POST)
+
+http://localhost:8080/ords/testuser/refreshstatut/
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+URL qui va chercher les infos pour un qrcodeid:
+
+(METHODE GET)
+
+http://localhost:8080/ords/testuser/get/qr-code-id/:qrcodeid
+
+
+URL qui va chercher tous les QRCODE:
+
+(METHODE GET)
+
+http://localhost:8080/ords/testuser/get/qrcode/all
+

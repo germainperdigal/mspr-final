@@ -3,7 +3,7 @@ package com.example.gostyleapp
 import com.google.gson.annotations.SerializedName
 
 /** QR Code model */
-data class QRCodeModel(
+data class QRCode(
     /** QR Code ID */
     @SerializedName("qr-code-id") val id: String,
 

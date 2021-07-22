@@ -9,9 +9,9 @@ import kotlinx.android.synthetic.main.activity_list_code.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_row.*
 
-class ListCodeActivity : AppCompatActivity(), (QRCodeModel) -> Unit {
+class ListCodeActivity : AppCompatActivity(), (QRCode) -> Unit {
     private val qrCodeRepo: QRCodeRepo = QRCodeRepo()
-    private var dataList: ArrayList<QRCodeModel> = ArrayList()
+    private var dataList: ArrayList<QRCode> = ArrayList()
     private val qrCodeAdapter: DataListAdapter = DataListAdapter(dataList, this)
 
     /**
@@ -46,7 +46,7 @@ class ListCodeActivity : AppCompatActivity(), (QRCodeModel) -> Unit {
         }
     }
 
-    override fun invoke(model: QRCodeModel) {
+    override fun invoke(model: QRCode) {
 
     }
 }

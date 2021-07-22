@@ -27,11 +27,13 @@ class MainActivity : AppCompatActivity(){
     /** Client */
     private val client = OkHttpClient();
 
+    private val URL = "https://url.fr/"
+
     /** QR Code repo */
     private val qrCodeRepo: QRCodeRepo = QRCodeRepo();
 
     /** Data list */
-    private var dataList: ArrayList<QRCodeModel> = ArrayList();
+    private var dataList: ArrayList<QRCode> = ArrayList();
 
     /**
      * On create
@@ -74,8 +76,7 @@ class MainActivity : AppCompatActivity(){
             decodeCallback = DecodeCallback {
                 runOnUiThread {
                     val request: Request = Request.Builder()
-                        .url("https://msprdesesmorts.free.beeceptor.com/qr")
-                        //.url("api/${it.text}")
+                        .url("${URL}qr/${it.text}")
                         .build();
 
                     client.newCall(request).enqueue(object : Callback {
@@ -89,7 +90,7 @@ class MainActivity : AppCompatActivity(){
                             val body = response.body?.string();
                             val items = body?.substringAfter("\"items\":[")?.substringBefore("],")
 
-                            val qrcode: QRCodeModel = gson.fromJson(items, QRCodeModel::class.java);
+                            val qrcode: QRCode = gson.fromJson(items, QRCode::class.java);
 
                             if (qrList.indexOf(qrcode) != -1) {
                                 qrList.add(qrcode);
